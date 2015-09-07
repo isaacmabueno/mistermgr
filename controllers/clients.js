@@ -16,13 +16,44 @@ controller.get('/', function(req, res, next) {
 
 });
 //get by id
+controller.get('/:id', function(req, res, next){
+  clientModel.findById(req.params.id, function(error, client){
+    if (error) return error;
+    res.json(client);
+  });
+});
 
 //create
+controller.post('/', function(req,res, next){
+  clientModel.create(req.body, function(error, client){
+    if (error) return error;
+    res.json(client)
+
+  });
+});
 
 //update by id
-
+controller.put('/:id', function(req, res, next){
+  clientModel.findByIdAndUpdate(req.params.id, req.body, function (error, client){
+    if (error) return error;
+    res.json(client);
+  });
+});
+controller.patch('/:id', function(req, res, next){
+  clientModel.findByIdAndUpdate(req.params.id, req.body, function (error, client){
+    if (error) return error;
+    res.json(client);
+  });
+});
 //delete by id
-
+controller.delete('/:id', function(req, res, next){
+  clientModel.findByIdAndRemove(req.params.id, req.body, function(error, client){
+    if (error) return error;
+    res.json({
+  "Message": "User with the id of " + client.id + "has been removed!"    
+    })
+  });
+});
 /* GET users listing. */
 // controller.get('/', function(req, res, next) {
 //   res.send('respond with a resource');
