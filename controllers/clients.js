@@ -6,6 +6,10 @@ var bodyParser = require('body-parser');
 
 
 //RESTful API!
+// GET DOCUMENTATION PAGE
+// controller.get('/documentation', function(req, res, next){
+//   res.render('index', { title: 'Mister MGR API Documentation'});
+// });
 
 //get all
 controller.get('/', function(req, res, next) {
@@ -51,7 +55,7 @@ controller.delete('/:id', function(req, res, next){
     if (error) return error;
     res.json({
   "Message": "User with the id of " + client.id + "has been removed!"
-    })
+    });
   });
 });
 /* GET users listing. */
