@@ -7,7 +7,7 @@ controller.get('/', function(req, res, next) {
 });
 
 controller.get('/angular', function(req, res, next){
-  res.render('angular', {title: "Angular Characters"});
+  res.render('angular', {title: "mistermgr"});
 });
 
 module.exports = controller;

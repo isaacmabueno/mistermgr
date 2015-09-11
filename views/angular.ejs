@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" media="screen" title="no title" charset="utf-8">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
 <script type="text/javascript" src="/javascripts/angular-app.js"></script>
 <h1><%=title%></h1>
@@ -11,13 +12,15 @@
     <input type="text" name="name" ng-model="address" placeholder="Address">
     <input type="text" name="name" ng-model="neighborhood" placeholder="Neighborhood">
     <input type="text" name="name" ng-model="emailAddress" placeholder="Email Address">
-    <input type="text" name="name" ng-model="phone" placeholder="(000)000-0000">
+    <input type="text" name="name" ng-model="phone" placeholder="(888)888-8888">
     <input type="text" name="name" ng-model="plan" placeholder="Plan">
     <input type="text" name="name" ng-model="contactName" placeholder="Name of Contact">
     <input type="text" name="name" ng-model="specialInstructions" placeholder="Special Instructions?">
     <input type="text" name="name" ng-model="date" placeholder="date">
     <input type="submit" value="CREATE!">
   </form>
-
+  <ul>
+    <li ng-repeat="clnt in clients">{{clnt.name}}<button ng-click="delete(client)">Delete</button></li>
+  </ul>
 </article>
 </section>
