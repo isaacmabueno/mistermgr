@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 //require database before the controllers
 //need this to be loaded before we cann access the controllers
-require('./models/db');
+require('./models/db'); //this points to /models/db.js
 
 //controllers
 var routes = require('./controllers/index');

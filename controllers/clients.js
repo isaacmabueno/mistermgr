@@ -50,7 +50,7 @@ controller.delete('/:id', function(req, res, next){
   clientModel.findByIdAndRemove(req.params.id, req.body, function(error, client){
     if (error) return error;
     res.json({
-  "Message": "User with the id of " + client.id + "has been removed!"    
+  "Message": "User with the id of " + client.id + "has been removed!"
     })
   });
 });

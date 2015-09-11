@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html ng-app="mistermgr">
+<html ng-app="mgr">
   <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" media="screen" title="no title" charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <!-- <script src="bower_components/angular/angular.js"></script> -->
     <script type="text/javascript" src= "angular.js"></script>
     <title></title>
   </head>
-  <body>
-    <header ng-controller="HeaderController">
-      <h1>{{title}}</h1>
-      <h3>{{tagLine}}</h3>
+  <body ng-controller="HeaderController">
+    <header>
+      <h1><%=title%></h1>
+      <h3><%=tagLine%></h3>
     </header>
-    <div ng-controller="MessageController">
+    <div ng-submit="MessageController">
       <h1>Miste MGR List:</h1><h5>{{messages.date | date}}
         UserName: <h3>{{messages.businessName}}</h3>
         <h5>Address: {{messages.address}}</h5>

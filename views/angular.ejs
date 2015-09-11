@@ -5,22 +5,65 @@
 <p>Welcome to <%=title%></p>
 
 <section ng-app="mgr">
-<article ng-controller"clientCtrl">
+<article ng-controller="ClientController">
   <h1>Add Client</h1>
-  <form ng-submit="create(businessName, address, neighborhood, emailAddress, phone, plan, contactName, specialInstructions, date)">
-    <input type="text" name="name" ng-model="businessName" placeholder="Business Name">
-    <input type="text" name="name" ng-model="address" placeholder="Address">
-    <input type="text" name="name" ng-model="neighborhood" placeholder="Neighborhood">
-    <input type="text" name="name" ng-model="emailAddress" placeholder="Email Address">
-    <input type="text" name="name" ng-model="phone" placeholder="(888)888-8888">
-    <input type="text" name="name" ng-model="plan" placeholder="Plan">
-    <input type="text" name="name" ng-model="contactName" placeholder="Name of Contact">
-    <input type="text" name="name" ng-model="specialInstructions" placeholder="Special Instructions?">
-    <input type="text" name="name" ng-model="date" placeholder="date">
-    <input type="submit" value="CREATE!">
+  <form ng-submit="createClient(businessName, address, neighborhood, emailAddress, phone, plan, contactName, specialInstructions, date)">
+    <div class="container">
+      <div class="row">
+        <div class="one-third column">&nbsp;</div>
+          <div class="one-third column">&nbsp;<input type="text" name="businessName" ng-model="businessName" placeholder="Business Name"></div>
+            <div class="one-third column">&nbsp;</div>
+      </div>
+        <div class="row">
+          <div class="one-third column">&nbsp;</div>
+            <div class="one-third column">&nbsp;<input type="text" name="address" ng-model="address" placeholder="Address"><br></div>
+              <div class="one-third column">&nbsp;</div>
+        </div>
+        <div class="row">
+          <div class="one-third column">&nbsp;</div>
+            <div class="one-third column">&nbsp;<input type="text" name="neighborhood" ng-model="neighborhood" placeholder="Neighborhood"><br></div>
+              <div class="one-third column">&nbsp;</div>
+        </div>
+        <div class="row">
+          <div class="one-third column">&nbsp;</div>
+            <div class="one-third column">&nbsp;<input type="email" name="emailAddress" ng-model="emailAddress" placeholder="Email Address"><br></div>
+              <div class="one-third column">&nbsp;</div>
+        </div>
+        <div class="row">
+          <div class="one-third column">&nbsp;</div>
+            <div class="one-third column">&nbsp;<input type="number" name="phone" ng-model="phone" placeholder="(888)888-8888"><br></div>
+              <div class="one-third column">&nbsp;</div>
+        </div>
+        <div class="row">
+          <div class="one-third column">&nbsp;</div>
+            <div class="one-third column">&nbsp;<input type="text" name="plan" ng-model="plan" placeholder="Plan"><br></div>
+              <div class="one-third column">&nbsp;</div>
+        </div>
+
+        <div class="row">
+          <div class="one-third column">&nbsp;</div>
+            <div class="one-third column">&nbsp;<input type="text" name="contactName" ng-model="contactName" placeholder="Name of Contact"><br></div>
+              <div class="one-third column">&nbsp;</div>
+        </div>
+        <div class="row">
+          <div class="one-third column">&nbsp;</div>
+            <div class="one-third column">&nbsp;<input type="text" name="specialInstructions" ng-model="specialInstructions" placeholder="Special Instructions?"><br></div>
+              <div class="one-third column">&nbsp;</div>
+        </div>
+        <div class="row">
+          <div class="one-third column">&nbsp;</div>
+            <div class="one-third column">&nbsp;<input type="text" name="date" ng-model="date" placeholder="date"><br></div>
+              <div class="one-third column">&nbsp;</div>
+        </div>
+        <div class="row">
+          <div class="one-third column">&nbsp;</div>
+            <div class="one-third column createbutton"><input type="submit" value="CREATE!"></div>
+              <div class="one-third column">&nbsp;</div>
+        </div>
+      </div>
   </form>
   <ul>
-    <li ng-repeat="clnt in clients">{{clnt.name}}<button ng-click="delete(client)">Delete</button></li>
+    <li ng-repeat = "client in clients">Business: {{client.businessName}}<br>  Address: {{client.address}}<br>  Neighborhood: {{client.neighborhood}}<br> Email: {{client.emailAddress}} <br> Phone #: {{client.phone}} <br> Plan: {{client.plan}}<br> Contact Name: {{client.contactName}} <br> Special Instructions: {{client.specialInstructions}} <br> Date: {{client.date | date}}<button ng-click = "delete(client)">Delete</button></li>
   </ul>
 </article>
 </section>

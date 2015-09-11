@@ -6,3 +6,17 @@ body {
 a {
   color: #00B7FF;
 }
+input {
+  margin: 0 auto !important;
+  width: 50% !important;
+  height: 50px !important;
+  padding: 21px 40px !important;
+  background-color: #fff !important;
+  border: 3px solid #D1D1D1 !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+}
+.createbutton{
+  width: 20%;
+}
