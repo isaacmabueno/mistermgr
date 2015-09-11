@@ -1,12 +1,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="/stylesheets/style.css" media="screen" title="no title" charset="utf-8">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
 <script type="text/javascript" src="/javascripts/angular-app.js"></script>
-<h1><%=title%></h1>
+<link href='https://fonts.googleapis.com/css?family=Oswald|Allan|Grand+Hotel|Londrina+Solid|Pompiere' rel='stylesheet' type='text/css'>
+<header><h1 class='title'><%=title%>
+<hamburger-toggle state="tgState"></hamburger-toggle>
+</header></h1>
 <p>Welcome to <%=title%></p>
 
 <section ng-app="mgr">
 <article ng-controller="ClientController">
-  <h1>Add Client</h1>
+  <p>Add Client</p>
   <form ng-submit="createClient(businessName, address, neighborhood, emailAddress, phone, plan, contactName, specialInstructions, date)">
     <div class="container">
       <div class="row">
@@ -31,7 +35,7 @@
         </div>
         <div class="row">
           <div class="one-third column">&nbsp;</div>
-            <div class="one-third column">&nbsp;<input type="number" name="phone" ng-model="phone" placeholder="(888)888-8888"><br></div>
+            <div class="one-third column">&nbsp;<input type="text" name="phone" ng-model="phone" placeholder="(888)888-8888"><br></div>
               <div class="one-third column">&nbsp;</div>
         </div>
         <div class="row">
@@ -42,7 +46,7 @@
 
         <div class="row">
           <div class="one-third column">&nbsp;</div>
-            <div class="one-third column">&nbsp;<input type="text" name="contactName" ng-model="contactName" placeholder="Name of Contact"><br></div>
+            <div class="one-third column">&nbsp;<input type="text" name="contactName" ng-model="contactName" placeholder="Contact Name"><br></div>
               <div class="one-third column">&nbsp;</div>
         </div>
         <div class="row">
@@ -57,13 +61,13 @@
         </div>
         <div class="row">
           <div class="one-third column">&nbsp;</div>
-            <div class="one-third column createbutton"><input type="submit" value="CREATE!"></div>
+            <div class="one-third column gobutton"><input type="submit" value="CREATE!"></div>
               <div class="one-third column">&nbsp;</div>
         </div>
       </div>
   </form>
   <ul>
-    <li ng-repeat = "client in clients">Business: {{client.businessName}}<br>  Address: {{client.address}}<br>  Neighborhood: {{client.neighborhood}}<br> Email: {{client.emailAddress}} <br> Phone #: {{client.phone}} <br> Plan: {{client.plan}}<br> Contact Name: {{client.contactName}} <br> Special Instructions: {{client.specialInstructions}} <br> Date: {{client.date | date}}<button ng-click = "delete(client)">Delete</button></li>
+    <li class = "clientslist" ng-repeat = "client in clients">Business: {{client.businessName}}<br>  Address: {{client.address}}<br>  Neighborhood: {{client.neighborhood}}<br> Email: {{client.emailAddress}} <br> Phone #: {{client.phone}} <br> Plan: {{client.plan}}<br> Contact Name: {{client.contactName}} <br> Special Instructions: {{client.specialInstructions}} <br> Date: {{client.date | date}}<br><button ng-click = "delete(client)">Delete</button></li>
   </ul>
 </article>
 </section>

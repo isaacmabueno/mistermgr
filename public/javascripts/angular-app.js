@@ -1,4 +1,5 @@
 var app = angular.module('mgr', []);
+angular.module('myApp', ['ngHamburger']);
 
 app.controller('ClientController', function($scope, $http){
   // $scope.title = "mistermgr",
@@ -12,8 +13,8 @@ app.controller('ClientController', function($scope, $http){
       console.log(data);
     });
   };
-$scope.createClient = function(businessName,address,neighborhood,emailAddress,phone,plan,contactName,specialInstructions) {
-  $http.post($scope.api, {businessName : businessName, address : address, neighborhood : neighborhood, emailAddress : emailAddress, phone : phone, plan : plan, contactName : contactName, specialInstructions : specialInstructions}).success(function(data,status) {
+$scope.createClient = function(businessName,address,neighborhood,emailAddress,phone,plan,contactName,specialInstructions,date) {
+  $http.post($scope.api, {businessName : businessName, address : address, neighborhood : neighborhood, emailAddress : emailAddress, phone : phone, plan : plan, contactName : contactName, specialInstructions : specialInstructions, date : date}).success(function(data,status) {
     $scope.fetch();
   });
 };

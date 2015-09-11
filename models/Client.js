@@ -10,7 +10,8 @@ var ClientSchema = new mongoose.Schema({
   phone: String,
   plan: String,
   contactName: String,
-  specialInstructions: String
+  specialInstructions: String,
+  date: Date
 });
 
 

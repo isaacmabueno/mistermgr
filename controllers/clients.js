@@ -51,6 +51,9 @@ controller.patch('/:id', function(req, res, next){
 });
 //delete by id
 controller.delete('/:id', function(req, res, next){
+
+  // use mandrill here to send email
+
   clientModel.findByIdAndRemove(req.params.id, req.body, function(error, client){
     if (error) return error;
     res.json({

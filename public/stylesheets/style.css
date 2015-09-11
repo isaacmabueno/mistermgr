@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -8,15 +7,37 @@ a {
 }
 input {
   margin: 0 auto !important;
-  width: 50% !important;
+  width: 100% !important;
   height: 50px !important;
-  padding: 21px 40px !important;
+  padding: 10px !important;
   background-color: #fff !important;
   border: 3px solid #D1D1D1 !important;
   border-radius: 10px !important;
   box-shadow: none !important;
   box-sizing: border-box !important;
+  font-size: 30px;
 }
-.createbutton{
-  width: 20%;
+.gobutton{
+  line-height: 0px !important;
+  padding:20px;
+  font-size: 50px !important;
+}
+h1 {
+  font-family: "Grand Hotel";
+  margin-bottom: 0;
+}
+p {
+  font-family: "Oswald";
+  font-size: 40px;
+}
+header {
+  background-color: rgba(117, 57, 57, 0.72);
+  width: 100%;
+  height: 100% auto;
+}
+.clientslist{
+  font-family: "Allen";
+  font-size: 30px;
+  float: left;
+  padding-right: 5%;
 }
