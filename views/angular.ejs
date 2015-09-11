@@ -1,0 +1,23 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+<script type="text/javascript" src="/javascripts/angular-app.js"></script>
+<h1><%=title%></h1>
+<p>Welcome to <%=title%></p>
+
+<section ng-app="mgr">
+<article ng-controller"clientCtrl">
+  <h1>Add Client</h1>
+  <form ng-submit="create(businessName, address, neighborhood, emailAddress, phone, plan, contactName, specialInstructions, date)">
+    <input type="text" name="name" ng-model="businessName" placeholder="Business Name">
+    <input type="text" name="name" ng-model="address" placeholder="Address">
+    <input type="text" name="name" ng-model="neighborhood" placeholder="Neighborhood">
+    <input type="text" name="name" ng-model="emailAddress" placeholder="Email Address">
+    <input type="text" name="name" ng-model="phone" placeholder="(000)000-0000">
+    <input type="text" name="name" ng-model="plan" placeholder="Plan">
+    <input type="text" name="name" ng-model="contactName" placeholder="Name of Contact">
+    <input type="text" name="name" ng-model="specialInstructions" placeholder="Special Instructions?">
+    <input type="text" name="name" ng-model="date" placeholder="date">
+    <input type="submit" value="CREATE!">
+  </form>
+
+</article>
+</section>

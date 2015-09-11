@@ -1,0 +1,20 @@
+<h1><%=title%></h1>
+<p>Welcome to <%=title%></p>
+<header ng-controller="HeaderController">
+  <h1><%=title%></h1>
+  <h3><%=tagLine%></h3>
+</header>
+<div ng-controller="MessageController">
+  <h1>Miste MGR List:</h1><h5><%=messages.date | date%>
+    UserName: <h3><%=messages.businessName%></h3>
+    <h5>Address: <%=messages.address%></h5>
+    <h5>neighborhood: <%=messages.neighborhood%></h5>
+    <h5>Email Address: <%=messages.emailAddress%></h5>
+    <h5>Phone: <%=messages.phone%></h5>
+    <h5>Plan: <%=messages.plan%></h5>
+    <h5>Contact Name: <%=messages.contactName%></h5>
+    <h5>Special Instructions?: <%=messages.specialInstructions%></h5>
+
+  </article>
+
+</div>

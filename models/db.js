@@ -9,11 +9,11 @@ mongoose.connect(connectionString);
 
 //3 LISTEN TO EVENTS AND LOG CHANGES...THIS IS IMPORTANT FOR DEBUGGING PURPOSES
 mongoose.connection.on('connected', function(){
-  console.log('Mogoose has connected to ' + connectionString);
+  console.log('Mongoose has connected to ' + connectionString);
 });
 mongoose.connection.on('disconnected', function(){
-  console.log('Mogoose has disconnected from ' + connectionString);
+  console.log('Mongoose has disconnected from ' + connectionString);
 });
 mongoose.connection.on('error', function(error){
-  console.log('Mogoose has connected experienced an error');
+  console.log('Mongoose has experienced an error');
 });
