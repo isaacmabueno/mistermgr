@@ -2,15 +2,15 @@
 <link rel="stylesheet" href="/stylesheets/style.css" media="screen" title="no title" charset="utf-8">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
 <script type="text/javascript" src="/javascripts/angular-app.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Oswald|Allan|Grand+Hotel|Londrina+Solid|Pompiere' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Oswald|Allan|Poiret+One|Grand+Hotel|Londrina+Solid|Pompiere|Advent+Pro' rel='stylesheet' type='text/css'>
 <header><h1 class='title'><%=title%>
 <hamburger-toggle state="tgState"></hamburger-toggle>
 </header></h1>
-<p>Welcome to <%=title%></p>
+<p class = "welcometext">Welcome to <%=title%></p>
 
 <section ng-app="mgr">
 <article ng-controller="ClientController">
-  <p>Add Client</p>
+  <p class = "addclient">Add Client</p>
   <form ng-submit="createClient(businessName, address, neighborhood, emailAddress, phone, plan, contactName, specialInstructions, date)">
     <div class="container">
       <div class="row">
