@@ -82,8 +82,7 @@ controller.post('/email', function(req, res, next) {
         to: [{email: req.body['emailAddress'], name: req.body['businessName']}],
         from_email: 'Info@urbanstreetwindowworks.com',
         subject: "Urban Street Cleaning Complete",
-        text: req.body['businessName'] + ", " + "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         "
-        + "Urban Street Window Works was just in " + req.body['neighborhood'] + " and cleaned your windows. Thank you for you business and have a great day!"
+        text: req.body['businessName'] + ", " + "\n" + "\n" +"Urban Street Window Works was just in " + req.body['neighborhood'] + " and cleaned your windows." + "\n" + " Thank you for you business and have a great day!" + "\n" + "\n" + "<3 Urban Street"
       }
     }, function(error, response)
     {
