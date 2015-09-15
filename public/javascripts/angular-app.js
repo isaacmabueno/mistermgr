@@ -1,6 +1,9 @@
 var app = angular.module('mgr', []);
 var mandrill = ('node-mandrill');
 
+///////////////////////////////// S C R I P T S ////////////////////////////////////////
+//                                                                                    //
+////////////////////////////////////////////////////////////////////////////////////////
 app.controller('ClientController', function($scope, $http){
   // $scope.title = "mistermgr",
   // $scope.tagLine = "An easy way to stay on task with your client",
@@ -12,6 +15,19 @@ app.controller('ClientController', function($scope, $http){
       $scope.clients = data;
       console.log(data);
     });
+  };
+
+  $scope.clearForm = function() {
+
+    $('#business').val('');
+    $('#address').val('');
+    $('#neighborhood').val('');
+    $('#email').val('');
+    $('#phone').val('');
+    $('#plan').val('');
+    $('#contact').val('');
+    $('#special').val('');
+    $('#date').val('');
   };
 
   $scope.createClient = function(businessName,address,neighborhood,emailAddress,phone,plan,contactName,specialInstructions,date) {
@@ -31,6 +47,8 @@ app.controller('ClientController', function($scope, $http){
         }
       ).success(function(data,status) {
           $scope.fetch();
+          console.log($scope);
+          $scope.clearForm();
         });
     }
   };
@@ -43,7 +61,6 @@ app.controller('ClientController', function($scope, $http){
     $scope.fetch();
     }
   };
-    $scope.fetch();
 
 
   $scope.email = function(client) {
@@ -51,12 +68,16 @@ app.controller('ClientController', function($scope, $http){
       console.log('check your email isaac');
       var confirmPost = confirm("Are you sure you want to send " + client['businessName'] + " a window cleaning completion email?");
       if (confirmPost == true) {
-        $http.post($scope.api + '/' + client["_id"]);
+        $http.post($scope.api);
         $scope.fetch();
       }
     });
     $scope.fetch();
   };
+
+  $scope.fetch();
+
+
 });
 
 

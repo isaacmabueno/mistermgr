@@ -6,13 +6,7 @@ var bodyParser = require('body-parser');
 
 var mandrill = require('node-mandrill')('6X3OXqxTBCyYB5xgoxGLpg');
 
-
-
-//RESTful API!
-// GET DOCUMENTATION PAGE
-// controller.get('/documentation', function(req, res, next){
-//   res.render('index', { title: 'Mister MGR API Documentation'});
-// });
+/////////////////////////////////////// C R U D  ///////////////////////////////////////
 
 //get all
 controller.get('/', function(req, res, next) {
@@ -54,9 +48,6 @@ controller.patch('/:id', function(req, res, next){
 });
 //delete by id
 controller.delete('/:id', function(req, res, next){
-
-  //use mandrill here to send an email
-
   clientModel.findByIdAndRemove(req.params.id, req.body, function(error, client){
     if (error) return error;
     res.json({
