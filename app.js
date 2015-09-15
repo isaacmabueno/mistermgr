@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
+var mandrill = require('node-mandrill')('6X3OXqxTBCyYB5xgoxGLpg');
 //require database before the controllers
 //need this to be loaded before we cann access the controllers
 require('./models/db'); //this points to /models/db.js

@@ -4,6 +4,9 @@ var controller = express.Router();
 var clientModel = require('../models/Client');
 var bodyParser = require('body-parser');
 
+var mandrill = require('node-mandrill')('6X3OXqxTBCyYB5xgoxGLpg');
+
+
 
 //RESTful API!
 // GET DOCUMENTATION PAGE
@@ -52,7 +55,7 @@ controller.patch('/:id', function(req, res, next){
 //delete by id
 controller.delete('/:id', function(req, res, next){
 
-  // use mandrill here to send email
+  //use mandrill here to send an email
 
   clientModel.findByIdAndRemove(req.params.id, req.body, function(error, client){
     if (error) return error;
@@ -61,6 +64,39 @@ controller.delete('/:id', function(req, res, next){
     });
   });
 });
+
+// controller.______('/:id', function(req, res, next){
+
+// })
+
+
+
+controller.post('/email', function(req, res, next) {
+
+  console.log('req dat body');
+  console.log(req.body);
+
+
+  mandrill('/messages/send', {
+    message: {
+        to: [{email: req.body['emailAddress'], name: req.body['businessName']}],
+        from_email: 'Info@urbanstreetwindowworks.com',
+        subject: "Urban Street Cleaning Complete",
+        text: req.body['businessName'] + ", " + "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         "
+        + "Urban Street Window Works was just in " + req.body['neighborhood'] + " and cleaned your windows. Thank you for you business and have a great day!"
+      }
+    }, function(error, response)
+    {
+    //uh oh, there was an error
+    if (error) console.log( JSON.stringify(error) );
+
+    //everything's good, lets see what mandrill said
+    else console.log(response);
+    res.json(response);
+
+    });
+});
+
 /* GET users listing. */
 // controller.get('/', function(req, res, next) {
 //   res.send('respond with a resource');

@@ -2,10 +2,11 @@
 <link rel="stylesheet" href="/stylesheets/style.css" media="screen" title="no title" charset="utf-8">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
 <script type="text/javascript" src="/javascripts/angular-app.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Oswald|Allan|Poiret+One|Grand+Hotel|Londrina+Solid|Pompiere|Advent+Pro' rel='stylesheet' type='text/css'>
-<header><h1 class='title'><%=title%>
-<hamburger-toggle state="tgState"></hamburger-toggle>
-</header></h1>
+<link href='https://fonts.googleapis.com/css?family=Oswald|Allan|Poiret+One|Julius+Sans+One|Londrina+Solid|Pompiere|Advent+Pro' rel='stylesheet' type='text/css'>
+<header>
+  <div class="row">
+      <div class="nine columns"><h1 class='title'><%=title%></h1></div>
+</header>
 <p class = "welcometext">Welcome to <%=title%></p>
 
 <section ng-app="mgr">
@@ -66,8 +67,12 @@
         </div>
       </div>
   </form>
+  <div class= "three columns search">Search: <input ng-model="nameText"></div><br/>
+  <div class="row">
+    <div class="twelve columns">&nbsp;</div><br/>
   <ul>
-    <li class = "clientslist" ng-repeat = "client in clients">Business: {{client.businessName}}<br>  Address: {{client.address}}<br>  Neighborhood: {{client.neighborhood}}<br> Email: {{client.emailAddress}} <br> Phone #: {{client.phone}} <br> Plan: {{client.plan}}<br> Contact Name: {{client.contactName}} <br> Special Instructions: {{client.specialInstructions}} <br> Date: {{client.date | date}}<br><button ng-click = "delete(client)">Delete</button></li>
+    <li class = "clientslist" ng-repeat = "client in clients | filter:nameText | orderBy:'client'">Business: {{client.businessName}}<br>  Address: {{client.address}}<br>  Neighborhood: {{client.neighborhood}}<br> Email: {{client.emailAddress}} <br> Phone #: {{client.phone}} <br> Plan: {{client.plan}}<br> Contact Name: {{client.contactName}} <br> Special Instructions: {{client.specialInstructions}} <br> Date: {{client.date | date}}<br>
+      <button ng-click = "delete(client)">Delete<button ng-click = "email(client)">Email</button>&nbsp;</button></li>
   </ul>
 </article>
 </section>

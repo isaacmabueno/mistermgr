@@ -3,7 +3,7 @@ var controller = express.Router();
 
 /* GET home page. */
 controller.get('/documentation', function(req, res, next){
-  res.render('index', { title: 'Mister MGR API Documentation'});
+  res.render('index', { title: 'mistermgr API Documentation'});
 });
 controller.get('/', function(req, res, next) {
   res.render('index', { title: 'mistermgr' });
