@@ -18,7 +18,6 @@ app.controller('ClientController', function($scope, $http){
   };
 
   $scope.clearForm = function() {
-
     $('#business').val('');
     $('#address').val('');
     $('#neighborhood').val('');
@@ -28,6 +27,14 @@ app.controller('ClientController', function($scope, $http){
     $('#contact').val('');
     $('#special').val('');
     $('#date').val('');
+  };
+
+
+  $('#addClient').on("click", function() {
+    console.log('jim is an idiot')
+    $("#listedClients").toggle();
+  });
+  $scope.showForm = function() {
   };
 
   $scope.createClient = function(businessName,address,neighborhood,emailAddress,phone,plan,contactName,specialInstructions,date) {
@@ -68,7 +75,6 @@ app.controller('ClientController', function($scope, $http){
       console.log('check your email isaac');
       var confirmPost = confirm("Are you sure you want to send " + client['businessName'] + " a window cleaning completion email?");
       if (confirmPost == true) {
-        $http.post($scope.api);
         $scope.fetch();
       }
     });
@@ -81,4 +87,4 @@ app.controller('ClientController', function($scope, $http){
 });
 
 
- //End of controller
+ /////////// E N D      O F       C O N T R O L L E R ////////////

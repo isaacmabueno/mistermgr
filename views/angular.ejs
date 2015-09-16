@@ -9,14 +9,19 @@
       <div class="nine columns"><h1 class='title'><%=title%></h1></div>
 </header>
 <p class = "welcometext">Welcome to <%=title%></p>
-
+</div>
 <section ng-app="mgr">
 <article ng-controller="ClientController">
-  <p class = "addclient">Add Client</p>
+  <div class="row">
+    <div class="five columns">&nbsp;</div>
+      <div class="three columns"><button type="button" id="addClient">Add Client</button></div>
+        <div class="four columns">&nbsp;</div>
+      </div>
 
- <!-- /////////////////////////////////////// C L I E N T - I N P U T S ////////////////////////////
+ <!--  ////////////////////////////////////// C L I E N T - I N P U T S /////////////////////////////
       //                                                                                          //
-      ////////////////////////////////////////////////////////////////////////////////////////////// -->
+      ///////////////////////////////////////////////////////////////////////////////////////////// -->
+<div id="listedClients">
   <form ng-submit="createClient(businessName, address, neighborhood, emailAddress, phone, plan, contactName, specialInstructions, date)">
     <div class="container">
       <div class="row">
@@ -68,20 +73,26 @@
             <div class="row">
               <div class="one-third column">&nbsp;</div>
                 <div class="one-third column gobutton"><input type="submit" value="CREATE!"></div>
-                <!-- ng-click='businessName = null; address = null; neighborhood = null; emailAddress = null; phone = null; plan = null; contactName = null; specialInstructions = null; date = null;' -->
                   <div class="one-third column">&nbsp;</div>
             </div>
           </div>
       </form>
+    </div>
  <!-- /////////////////////////////////// D A T A - B I N D I N G   &    C L I E N T S //////////////
       //                                                                                          //
       ////////////////////////////////////////////////////////////////////////////////////////////// -->
-      <div class= "three columns search">Search: <input ng-model="nameText"></div><br/>
+      <div class= "three columns search"><input ng-model="nameText" placeholder="Search..."></div><br/>
       <div class="row">
         <div class="twelve columns">&nbsp;</div><br/>
       <ul>
-        <li class = "clientslist" ng-repeat = "client in clients | filter:nameText | orderBy:'client'">Business: {{client.businessName}}<br>  Address: {{client.address}}<br>  Neighborhood: {{client.neighborhood}}<br> Email: {{client.emailAddress}} <br> Phone #: {{client.phone}} <br> Plan: {{client.plan}}<br> Contact Name: {{client.contactName}} <br> Special Instructions: {{client.specialInstructions}} <br> Date: {{client.date | date}}<br>
-          <button ng-click = "delete(client)">Delete<button ng-click = "email(client); ">Email</button>&nbsp;</button></li>
+        <div class="row">
+          <div class="two columns"></div>
+          <div class="eight columns">
+            <li class = "clientslist" ng-repeat = "client in clients | filter:nameText | orderBy:'client'">Business: {{client.businessName}}<br>  Address: {{client.address}}<br>  Neighborhood: {{client.neighborhood}}<br> Email: {{client.emailAddress}} <br> Phone #: {{client.phone}} <br> Plan: {{client.plan}}<br> Contact Name: {{client.contactName}} <br> Special Instructions: {{client.specialInstructions}} <br> Date: {{client.date | date}}<br>
+              <div>
+                <button ng-click="delete(client)">Delete</button>
+              <button ng-click="email(client)">Email</button>&nbsp;</li>
+              </div>
       </ul>
     </article>
     </section>
