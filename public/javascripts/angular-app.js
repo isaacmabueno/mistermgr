@@ -30,12 +30,28 @@ app.controller('ClientController', function($scope, $http){
   };
 
 
-  $('#addClient').on("click", function() {
-    console.log('jim is an idiot')
-    $("#listedClients").toggle();
-  });
-  $scope.showForm = function() {
-  };
+  // $('#addClient').on("click", function() {
+  //   console.log('jim is an idiot')
+  //   $("#listedClients").slideToggle();
+  //   $(this).css({ 'margin-left': '-500px' });
+  // $("#addClient").on("click", function() {
+  //   console.log("jim is a double idiot")
+  //   $(this).css({ "margin-left": "10px" });
+  // $('#addClient').on("click", function() {
+  //     console.log('jim is an idiot')
+  //     $("#listedClients").slideToggle();
+  // });
+  // });
+  // });
+  // $scope.showForm = function() {
+  // };
+  //
+  // $('#addClient').on("click", function() {
+  //   console.log("jim is a double idiot")
+  //   $("listedClients").slideUp(3000);
+  // });
+  // $scope.animateForm= function() {
+  // };
 
   $scope.createClient = function(businessName,address,neighborhood,emailAddress,phone,plan,contactName,specialInstructions,date) {
     var confirmPost= confirm("Do you want to add " + businessName + " to your database?");
