@@ -60,7 +60,9 @@ controller.delete('/:id', function(req, res, next){
 
 // })
 
-
+//////////////////////// M A N D R I L L ///////////////////////////
+//                                                               //
+//////////////////////////////////////////////////////////////////
 
 controller.post('/email', function(req, res, next) {
 
