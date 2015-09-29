@@ -1,5 +1,4 @@
 # mistermgr
-# Backbone_Project- LD- EVERYDAY
 **SCREEN SHOTS**
 ![alt image] (http://i.imgur.com/yamck8d.png)
 **SUMMARY:** A full stack application built in the MEAN stack.
